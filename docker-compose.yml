@@ -4,9 +4,9 @@ services:
     build:
       context: nginx/
     volumes:
-      - type: bind
-        source: ./apps
-        target: /usr/share/nginx/html/
+    - type: bind
+      source: ./apps
+      target: /usr/share/nginx/html/data
     ports:
       - "80:80"
   postgres:
@@ -26,3 +26,5 @@ services:
     ports:
       - "5432:5432"
 
+volumes:
+   postgres: 
